@@ -55,7 +55,7 @@ selected_title = st.sidebar.selectbox("🎙️ Select a TED Talk", talk_titles)
 selected_row = df[df["title"] == selected_title].iloc[0]
 
 # TED video button (opens TED URL in new tab)
-st.markdown("### 🎥 TED Talk Video")
+st.markdown("### 🎥 Watch the TED Talk")
 st.markdown(
     f"""
     <a href="{selected_row['video_url']}" target="_blank">
@@ -83,6 +83,7 @@ with st.expander("💡 Impactful Ideas"):
 
 with st.expander("📊 Sentiment Score"):
     st.write(f"Average Sentiment Score: {selected_row['avg_sentiment']:.2f}")
+    
 
 with st.expander("🎭 Top Emotions"):
     emotions = selected_row["top_3_emotions"].split(',')
