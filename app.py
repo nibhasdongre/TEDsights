@@ -73,8 +73,7 @@ st.markdown("### 🔊 Audio")
 st.audio(os.path.join(AUDIO_FOLDER, selected_row["audio_file"]), format="audio/mp3")
 
 # Expander sections
-with st.expander("📝 Transcription"):
-    st.write(selected_row["transcription"])
+
 
 with st.expander("📄 Summary"):
     st.write(selected_row["summary"])
@@ -88,6 +87,8 @@ with st.expander("📊 Sentiment Score"):
 with st.expander("🎭 Top Emotions"):
     emotions = selected_row["top_3_emotions"].split(',')
     st.write(", ".join([emotion.strip().capitalize() for emotion in emotions]))
+with st.expander("📝 Transcription"):
+    st.write(selected_row["transcription"])
 
 # Visualizations
 st.markdown("---")
@@ -104,6 +105,6 @@ plot_files = [
 for plot in plot_files:
     plot_path = os.path.join(PLOT_FOLDER, plot)
     if os.path.exists(plot_path):
-        st.image(plot_path, use_column_width=True)
+        st.image(plot_path, use_container_width=True)
     else:
         st.warning(f"Missing plot: {plot}")
