@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TEDsights</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TEDsights</h1>
+      <p class="tagline">GenAI powered insights from TED Talks</p>
+    </header>
+
+    <section id="talkList" class="card">
+      <h2>Choose a TED Talk</h2>
+      <div id="fileTitles" class="button-group"></div>
+    </section>
+
+    <section id="talkDetails" class="card">
+      <h2 id="selectedTitle">Select a TED Talk</h2>
+      <p><strong>Video:</strong> <a id="videoLink" class="btn" href="#" target="_blank">Watch Video</a></p>
+      <p><strong>Audio:</strong><br/><audio id="audioPlayer" controls></audio></p>
+      <p><strong>Transcription:</strong><br/><span id="transcriptText"></span></p>
+      <p><strong>Summary:</strong><br/><span id="summaryText"></span></p>
+      <p><strong>Impactful Ideas:</strong><br/><span id="ideasText"></span></p>
+      <p><strong>Sentiment Score:</strong> <span id="sentimentScore"></span></p>
+      <p><strong>Top Emotions:</strong> <span id="emotionsList"></span></p>
+    </section>
+
+    <section id="visuals" class="card">
+      <h2>Project Visualizations</h2>
+      <div class="plot-gallery">
+        <img src="plots/pie-chart.png" alt="Sentiment Distribution" />
+        <img src="plots/violinplot.png" alt="Violin Plot for Sentiment Scores by Emotion"/>
+        <img src="plots/bar-graph.png" alt="Distribution of Average Sentiment Scores"/>
+        <img src="plots/histogram.png" alt="Frequency of Top 3 Emotions"/>
+        <img src="plots/wordcloud.png" alt="WordCloud - Most Frequent words in Impactful Ideas"/>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with Whisper, FLAN-T5, and GenAI | Hosted on GitHub Pages</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
