@@ -15,13 +15,45 @@ df["audio_file"] = [f"audio0{i+1}.mp3" for i in range(len(df))]
 st.set_page_config(page_title="TEDsights - GenAI Insights from TED Talks", layout="wide")
 st.markdown("""
     <style>
-    body {background-color: black; color: white;}
-    .stButton>button {background-color: red; color: white; border-radius: 12px;}
-    .st-collapsible, .stMarkdown {background-color: #1a1a1a; padding: 1rem; border-radius: 1rem;}
+    body {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    .stButton>button {
+        background-color: red;
+        color: white;
+        border-radius: 12px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .st-collapsible, .stMarkdown, .st-expander {
+        background-color: #2e2e2e; /* Slightly dark gray */
+        padding: 1rem;
+        border-radius: 1rem;
+        text-align: center;
+    }
+    .st-collapsible>div, .stMarkdown>div {
+        color: white;
+    }
+    .stVideo, .stAudio, .stImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .stExpander>div {
+        text-align: center;
+    }
+    .stAlert {
+        color: white;
+        background-color: red;
+        border-radius: 8px;
+        padding: 10px;
+    }
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🎤 TEDsights")
+st.title("TEDsights")
 st.markdown("#### Explore GenAI-powered insights from impactful TED Talks")
 
 # Sidebar selection
@@ -55,7 +87,13 @@ with st.expander("🎭 Top Emotions"):
 # Visualizations section
 st.markdown("---")
 st.markdown("### 📈 Visual Insights")
-plot_files = ["plot1.png", "plot2.png", "plot3.png", "plot4.png", "plot5.png"]
+plot_files = [
+    "bar-graph.png",
+    "histogram.png",
+    "pie-chart.png",
+    "violinplot.png",
+    "wordcloud.png"
+]
 for plot in plot_files:
     if os.path.exists(plot):
         st.image(plot, use_column_width=True)
