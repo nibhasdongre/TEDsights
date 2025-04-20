@@ -5,6 +5,7 @@ import os
 # Load data from CSV
 DATA_PATH = "streamlit-data-genai.csv"
 AUDIO_FOLDER = "audio"
+PLOTS_FOLDER = "plots"  # Updated folder for images
 df = pd.read_csv(DATA_PATH)
 
 # Preprocess dataframe!
@@ -16,25 +17,28 @@ st.set_page_config(page_title="TEDsights - GenAI Insights from TED Talks", layou
 st.markdown("""
     <style>
     body {
-        background-color: black;
-        color: white;
+        background-color: black; /* Black background */
+        color: white; /* White text */
         text-align: center;
     }
+    h1, h2, h3, h4 {
+        color: red; /* Red headings */
+    }
     .stButton>button {
-        background-color: red;
+        background-color: red; /* Red buttons */
         color: white;
         border-radius: 12px;
         padding: 10px 20px;
         font-size: 16px;
     }
     .st-collapsible, .stMarkdown, .st-expander {
-        background-color: #2e2e2e; /* Slightly dark gray */
+        background-color: #2e2e2e; /* Slightly dark gray tiles */
         padding: 1rem;
         border-radius: 1rem;
         text-align: center;
     }
     .st-collapsible>div, .stMarkdown>div {
-        color: white;
+        color: white; /* White text inside tiles */
     }
     .stVideo, .stAudio, .stImage {
         display: block;
@@ -94,8 +98,10 @@ plot_files = [
     "violinplot.png",
     "wordcloud.png"
 ]
+
 for plot in plot_files:
-    if os.path.exists(plot):
-        st.image(plot, use_column_width=True)
+    plot_path = os.path.join(PLOTS_FOLDER, plot)  # Load images from 'plots' folder
+    if os.path.exists(plot_path):
+        st.image(plot_path, use_column_width=True)
     else:
         st.warning(f"Missing plot: {plot}")
