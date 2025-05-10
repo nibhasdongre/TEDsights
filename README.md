@@ -4,6 +4,8 @@ TEDsights is an end-to-end pipeline powered by Generative AI that transcribes, s
 
 🎯 This project demonstrates how GenAI can be used to transform large volumes of spoken content into digestible, structured insights that are both useful and meaningful.
 
+🌐 Live Streamlit App : https://nibhasdongre-tedsights-tedtalk-insights-powered-by-gen-ai.streamlit.app/
+
 💡 Problem Statement:
 With thousands of TED Talks available online, it's challenging to extract quick, meaningful insights from them. Watching each talk or reading full transcripts is time-consuming.
 
@@ -18,7 +20,6 @@ This notebook showcases TEDsights, a GenAI-powered pipeline to extract insights 
 📊 NLP tools for sentiment & emotion analysis (GenAI Evaluation)
 🗃️ JSON & CSV outputs to structure and serve results (Structured output/JSON Mode )
 📦 Precomputed insights for fast access (RAG-style retrieval)
-Links:
 
-📁 GitHub Repository
-🌐 Live Streamlit App
+
+
